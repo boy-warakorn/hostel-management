@@ -1,0 +1,6 @@
+.sidebar-container {
+  grid-column: 1/2;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}

@@ -1,11 +1,14 @@
+import Auth from './components/auth/AuthCard';
+import Hostel from './components/hostel/Hostel';
+import { Switch, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className='container'>
-      <div className='login_register-container'>
-        <div className='login_register-card'>
-          <h1>Welcome</h1>
-        </div>
-      </div>
+      <Switch>
+        <Route path='/' exact component={Auth} />
+        <Route path='/home' exact component={Hostel} />
+      </Switch>
     </div>
   );
 }
