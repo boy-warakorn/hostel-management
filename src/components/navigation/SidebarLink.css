@@ -1,0 +1,40 @@
+.sidebar-link-text {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: var(--border-radius-xs);
+
+  display: flex;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+.sidebar-link-text:hover {
+  background-color: var(--color-primary);
+}
+
+.sidebar-link-text:not(:last-child) {
+  margin-bottom: 1.4rem;
+}
+
+.sidebar-link-active {
+  background-color: var(--color-primary);
+}
+
+.sidebar-icon {
+  margin-right: 1.5rem;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+  }
+  100% {
+  }
+}

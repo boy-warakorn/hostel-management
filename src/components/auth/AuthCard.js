@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginForm from './form/LoginForm';
 import './AuthCard.css';
+import PrimaryButton from '../common/PrimaryButton';
+import SecondaryButton from '../common/SecondaryButton';
 
 const AuthCard = () => {
   return (
@@ -12,6 +14,10 @@ const AuthCard = () => {
         ></i>
         <h1 className='heading-text'>The HosteL</h1>
         <LoginForm />
+        <div className='auth-button-group'>
+          <SecondaryButton />
+          <PrimaryButton />
+        </div>
       </div>
     </div>
   );

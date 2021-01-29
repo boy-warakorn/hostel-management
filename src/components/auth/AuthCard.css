@@ -9,10 +9,18 @@
   align-items: center;
 
   background-color: #fff;
-  width: 30vw;
-  height: 80vh;
+  width: 40vw;
+  height: 85vh;
   text-align: center;
   border-radius: var(--border-radius-xs);
 
-  padding: 8rem;
+  padding: 2rem 10rem;
+}
+
+.auth-button-group {
+  width: 100%;
+  margin-top: 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
 }

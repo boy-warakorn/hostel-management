@@ -7,7 +7,7 @@ function App() {
     <div className='container'>
       <Switch>
         <Route path='/' exact component={Auth} />
-        <Route path='/home' exact component={Hostel} />
+        <Route path='/home' component={Hostel} />
       </Switch>
     </div>
   );
