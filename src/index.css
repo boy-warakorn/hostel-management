@@ -1,0 +1,45 @@
+:root {
+  --color-primary: #000000;
+  --font-primary: 'Prompt', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.heading-text {
+  font-size: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 25rem repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.sidebar {
+  grid-column: 1/2;
+  background-color: red;
+}
+
+.login_register-container {
+  grid-column: 1/ -1;
+}
