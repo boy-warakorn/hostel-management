@@ -4,3 +4,23 @@
   height: 100%;
   background-color: #fff;
 }
+
+.hostel-header {
+  height: 8rem;
+  border-bottom: var(--line);
+  padding-left: 4rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.hostel-list-box--inside {
+  padding: 2rem 4rem;
+  background-color: #eeeeee;
+  min-height: 100vh;
+}
+
+.hostel-header > h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+}

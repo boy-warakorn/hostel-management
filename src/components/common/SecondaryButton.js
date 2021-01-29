@@ -1,8 +1,8 @@
 import React from 'react';
 import './SecondaryButton.css';
 
-const SecondaryButton = () => {
-  return <div className='secondary-button'>Switch To Register</div>;
+const SecondaryButton = ({ title }) => {
+  return <div className='secondary-button'>{title}</div>;
 };
 
 export default SecondaryButton;

@@ -15,8 +15,8 @@ const AuthCard = () => {
         <h1 className='heading-text'>The HosteL</h1>
         <LoginForm />
         <div className='auth-button-group'>
-          <SecondaryButton />
-          <PrimaryButton />
+          <SecondaryButton title='Switch to Register' />
+          <PrimaryButton title='Login' />
         </div>
       </div>
     </div>

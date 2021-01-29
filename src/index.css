@@ -3,11 +3,17 @@
   --color-primary: #d65353;
   --color-primary-light: #e06161;
 
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   --font-primary: 'Prompt', sans-serif;
   --font-heading: 'Hachi Maru Pop', cursive;
   --color-secondary-dark: #10151f;
   --color-secondary: #28364a;
   --color-secondary-light: #b2d3e1;
+
+  --color-grey: #616161;
+
+  --line: 1px solid lightgrey;
 
   --background-primary-gradient: linear-gradient(
     to right bottom,
@@ -47,7 +53,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 100vh;
+  grid-template-rows: 1fr;
   grid-template-columns: 30rem repeat(8, 1fr);
   justify-items: center;
   align-items: center;
@@ -82,4 +88,22 @@ body {
 }
 .icon-s {
   font-size: 2.7rem;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  width: 25%;
+  font-family: inherit;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-xs);
+
+  transition: width 0.3s;
+}
+.search-input:focus {
+  width: 40%;
+  outline: none;
 }

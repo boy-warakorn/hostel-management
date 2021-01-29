@@ -3,6 +3,6 @@
   background-image: var(--background-primary-gradient);
   height: 100%;
   width: 100%;
-
-  padding: 3rem 2rem;
+  min-height: 100vh;
+  padding: 1.7rem 2rem;
 }
