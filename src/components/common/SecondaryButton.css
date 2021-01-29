@@ -1,0 +1,16 @@
+.secondary-button {
+  font-size: 1.5rem;
+  padding: 0.5rem 3rem;
+  border-radius: var(--border-radius-m);
+  display: inline-block;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}

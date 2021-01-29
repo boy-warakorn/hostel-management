@@ -1,0 +1,18 @@
+.auth-container {
+  grid-column: 1/ -1;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  width: 30vw;
+  height: 80vh;
+  text-align: center;
+  border-radius: var(--border-radius-xs);
+
+  padding: 8rem;
+}

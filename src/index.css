@@ -1,6 +1,17 @@
 :root {
-  --color-primary: #000000;
+  --color-black: #000000;
+  --color-primary: #d65353;
+  --color-primary-light: #e06161;
+
   --font-primary: 'Prompt', sans-serif;
+  --color-secondary-dark: #10151f;
+  --color-secondary: #28364a;
+  --color-secondary-light: #b2d3e1;
+
+  --border-radius-xs: 0.4rem;
+  --border-radius-s: 0.8rem;
+  --border-radius-m: 1rem;
+  --border-radius-l: 1.4rem;
 }
 
 *,
@@ -18,7 +29,7 @@ html {
 
 body {
   font-family: var(--font-primary);
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-weight: 300;
   line-height: 1.6;
 }
@@ -33,6 +44,11 @@ body {
   grid-template-columns: 25rem repeat(8, 1fr);
   justify-items: center;
   align-items: center;
+  background-image: linear-gradient(
+    to right,
+    var(--color-secondary-dark),
+    var(--color-secondary)
+  );
 }
 
 .sidebar {
@@ -40,6 +56,24 @@ body {
   background-color: red;
 }
 
-.login_register-container {
-  grid-column: 1/ -1;
+.mr-xs {
+  margin-right: 1rem;
+}
+.mr-s {
+  margin-right: 2rem;
+}
+.mr-l {
+  margin-right: 4rem;
+}
+
+.mr-xl {
+  margin-right: 8rem;
+}
+
+.icon-primary {
+  color: var(--color-secondary);
+}
+
+.icon-l {
+  font-size: 17rem;
 }

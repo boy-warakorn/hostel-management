@@ -1,0 +1,10 @@
+.auth-form {
+  width: 100%;
+  margin-top: 5rem;
+}
+.auth-button-group {
+  margin-top: 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
