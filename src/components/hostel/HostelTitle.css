@@ -1,11 +1,11 @@
 .hostel-title {
-  padding: 1rem 0 1rem 4rem;
+  padding: 1rem 4rem;
   font-size: 1.5rem;
   font-weight: 500;
   border-bottom: var(--line);
   color: var(--color-grey);
-}
 
-.hostel-title > p {
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

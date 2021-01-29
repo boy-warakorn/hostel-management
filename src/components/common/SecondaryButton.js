@@ -1,8 +1,12 @@
 import React from 'react';
 import './SecondaryButton.css';
 
-const SecondaryButton = ({ title }) => {
-  return <div className='secondary-button'>{title}</div>;
+const SecondaryButton = ({ title, onClick }) => {
+  return (
+    <div className='secondary-button' onClick={onClick}>
+      {title}
+    </div>
+  );
 };
 
 export default SecondaryButton;

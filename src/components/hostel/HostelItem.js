@@ -1,14 +1,24 @@
 import React from 'react';
 import './HostelItem.css';
 import SecondaryButton from '../common/SecondaryButton';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const HostelItem = () => {
+  const history = useHistory();
+  const location = useLocation();
+
+  const OnClickHandler = () => {
+    history.push(`${location.pathname}/hostel/1`);
+  };
+
   return (
     <div className='hostel-item-card'>
       <div className='hostel-item-title-box'>
         <p>
           <span>Name:</span> Hotel Del luna
         </p>
+        <i className='fas fa-bookmark'></i>
+        {/* <i className='far fa-bookmark'></i> */}
       </div>
       <div className='hostel-item-detail-box'>
         <p>
@@ -20,8 +30,8 @@ const HostelItem = () => {
           Asperiores obcaecati dignissimos, exercitationem veniam temporibus
           explicabo quasi est fugiat deserunt et aperiam ut delectus.
         </p>
-        <div className='flex-end'>
-          <SecondaryButton title='See more...' />
+        <div className='flex-end' style={{ marginBottom: '1rem' }}>
+          <SecondaryButton title='See more...' onClick={OnClickHandler} />
         </div>
       </div>
     </div>

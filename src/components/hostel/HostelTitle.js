@@ -3,7 +3,7 @@ import './HostelTitle.css';
 
 const HostelTitle = () => {
   return (
-    <div class='hostel-title'>
+    <div className='hostel-title'>
       <p>HOSTEL</p>
       <input
         type='text'
