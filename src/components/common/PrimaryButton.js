@@ -1,11 +1,15 @@
 import React from 'react';
 import './PrimaryButton.css';
 
-const PrimaryButton = ({ title, onClick }) => {
+const PrimaryButton = ({ title, onClick, submit }) => {
   return (
-    <div className='primary-button' onClick={onClick}>
+    <button
+      className='primary-button'
+      onClick={onClick}
+      type={submit ? 'submit' : 'button'}
+    >
       {title}
-    </div>
+    </button>
   );
 };
 

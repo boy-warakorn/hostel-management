@@ -5,7 +5,7 @@ import './HostelMain.css';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
-import { searchObjectByName } from '../../../utils/utilities';
+import { searchObjectByName } from '../../utils/utilities';
 
 const HostelMain = () => {
   const dispatch = useDispatch();

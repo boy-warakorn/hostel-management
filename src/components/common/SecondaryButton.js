@@ -3,9 +3,9 @@ import './SecondaryButton.css';
 
 const SecondaryButton = ({ title, onClick }) => {
   return (
-    <div className='secondary-button' onClick={onClick}>
+    <button className='secondary-button' onClick={onClick}>
       {title}
-    </div>
+    </button>
   );
 };
 

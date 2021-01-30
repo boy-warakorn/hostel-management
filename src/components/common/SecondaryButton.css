@@ -1,11 +1,12 @@
 .secondary-button {
   font-size: 1.5rem;
-  padding: 0.5rem 3rem;
-  border-radius: var(--border-radius-m);
+  padding: 1rem 4rem;
+  border-radius: var(--border-radius-s);
   display: inline-block;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
   cursor: pointer;
+  background-color: #fff;
 
   transition: all 0.3s;
 }
@@ -13,4 +14,8 @@
 .secondary-button:hover {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.secondary-button:active {
+  outline: none;
 }

@@ -1,11 +1,16 @@
 import React from 'react';
 import './InputField.css';
 
-const InputField = ({ title }) => {
+const InputField = ({ title, onChange, name }) => {
   return (
     <div className='auth-input-group'>
-      <label htmlFor='username'>{title}</label>
-      <input type='text' name='username' placeholder={`Enter you ${title}`} />
+      <label htmlFor={title}>{title}</label>
+      <input
+        type='text'
+        name={name}
+        placeholder={`Enter you ${title}`}
+        onChange={onChange}
+      />
     </div>
   );
 };

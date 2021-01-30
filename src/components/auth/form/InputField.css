@@ -6,11 +6,19 @@
 }
 
 .auth-input-group > label {
+  text-transform: capitalize;
   margin-bottom: 1rem;
   align-self: flex-start;
   font-weight: 400;
   font-size: inherit;
   display: inline-block;
+}
+
+.auth-input-group + p {
+  color: #e67373;
+  font-size: 1.25rem;
+  margin-top: -1.5rem;
+  text-align: left;
 }
 
 .auth-input-group input {
