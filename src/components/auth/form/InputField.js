@@ -8,7 +8,7 @@ const InputField = ({ title, onChange, name, hidden }) => {
       <input
         type={hidden ? 'password' : 'text'}
         name={name}
-        placeholder={`Enter you ${title}`}
+        placeholder={`Enter your ${title}`}
         onChange={onChange}
       />
     </div>
