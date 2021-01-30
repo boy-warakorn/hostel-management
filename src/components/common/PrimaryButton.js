@@ -1,8 +1,12 @@
 import React from 'react';
 import './PrimaryButton.css';
 
-const PrimaryButton = ({ title }) => {
-  return <div className='primary-button'>{title}</div>;
+const PrimaryButton = ({ title, onClick }) => {
+  return (
+    <div className='primary-button' onClick={onClick}>
+      {title}
+    </div>
+  );
 };
 
 export default PrimaryButton;

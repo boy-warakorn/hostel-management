@@ -5,11 +5,22 @@ import './AuthCard.css';
 import PrimaryButton from '../common/PrimaryButton';
 import SecondaryButton from '../common/SecondaryButton';
 
-const AuthCard = () => {
-  const [isLogin, setIsLogin] = useState(true);
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/actionTypes';
 
-  let form = isLogin ? <LoginForm /> : <RegisterForm />;
-  let buttonText = isLogin ? 'Register' : 'Login';
+const AuthCard = ({ isLogin, login, register }) => {
+  const [isUILogin, setIsLogin] = useState(true);
+
+  let form = isUILogin ? <LoginForm /> : <RegisterForm />;
+  let secondaryButtonText = isUILogin ? 'Register' : 'Login';
+  let primaryButtonText = !isUILogin ? 'Register' : 'Login';
+
+  const loginHandler = () => {
+    login();
+  };
+  const registerHandler = () => {
+    register();
+  };
 
   return (
     <div className='auth-container'>
@@ -17,14 +28,30 @@ const AuthCard = () => {
         {form}
         <div className='auth-button-group'>
           <SecondaryButton
-            title={`Switch to ${buttonText}`}
-            onClick={() => setIsLogin(!isLogin)}
+            title={`Switch to ${secondaryButtonText}`}
+            onClick={() => setIsLogin(!isUILogin)}
           />
-          <PrimaryButton title='Login' />
+          <PrimaryButton
+            title={primaryButtonText}
+            onClick={isUILogin ? () => loginHandler() : () => registerHandler()}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default AuthCard;
+const mapStateToProps = (state) => {
+  return {
+    isLogin: state.auth.isLogin,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: () => dispatch({ type: actionCreators.LOGIN }),
+    register: () => dispatch({ type: actionCreators.REGISTER }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthCard);

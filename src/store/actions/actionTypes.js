@@ -1,0 +1,9 @@
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+export const LOGOUT = 'LOGOUT';
+
+export const FETCH_HOSTELS = 'FETCH_HOSTELS';
+export const FETCH_BOOKMARK_HOSTELS = 'FETCH_BOOKMARK_HOSTELS';
+export const FETCH_HOSTEL_BY_ID = 'FETCH_HOSTEL_BY_ID';
+
+export const BOOKMARK_HOSTEL = 'BOOKMARK_HOSTEL';
