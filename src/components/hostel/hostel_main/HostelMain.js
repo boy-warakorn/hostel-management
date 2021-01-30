@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { searchObjectByName } from '../../utils/utilities';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
@@ -11,10 +10,12 @@ const HostelMain = () => {
   const dispatch = useDispatch();
   const ref = useRef();
 
-  const [searchHostels, setSearchHostels] = useState(null);
-
   let hostels = useSelector((state) => {
     return state.hostel.hostels;
+  });
+
+  let searchHostels = useSelector((state) => {
+    return state.hostel.searchHostels;
   });
 
   let renderContent = <Loader />;
@@ -29,7 +30,7 @@ const HostelMain = () => {
     ));
   }
   const search = () => {
-    setSearchHostels(searchObjectByName(hostels, ref.current.value));
+    dispatch(actions.searchHostels(ref.current.value));
   };
 
   useEffect(() => {

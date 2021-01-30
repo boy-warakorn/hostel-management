@@ -3,6 +3,7 @@ import {
   SET_BOOKMARK_HOSTELS,
   SET_HOSTELS,
   BOOKMARK_HOSTEL,
+  SEARCH_HOSTELS,
 } from './actionTypes';
 import axios from 'axios';
 
@@ -41,5 +42,12 @@ export const bookmarkHostel = (id) => {
   return {
     type: BOOKMARK_HOSTEL,
     id,
+  };
+};
+
+export const searchHostels = (name) => {
+  return {
+    type: SEARCH_HOSTELS,
+    name,
   };
 };

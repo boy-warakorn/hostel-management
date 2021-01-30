@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import SecondaryButton from '../../common/SecondaryButton';
@@ -6,6 +6,7 @@ import * as actions from '../../../store/actions/index';
 import './HostelItem.css';
 
 const HostelItem = ({ hostel }) => {
+  const [status, setStatus] = useState();
   const history = useHistory();
   const location = useLocation();
   const dispatch = useDispatch();
@@ -19,13 +20,18 @@ const HostelItem = ({ hostel }) => {
     });
   };
 
+  useEffect(() => {
+    setStatus(hostel.isBookmark);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const bookmark = () => {
-    hostel.isBookmark = !hostel.isBookmark;
+    setStatus(!status);
     dispatch(actions.bookmarkHostel(hostel.id));
     dispatch(actions.setBookmarkHostels());
   };
 
-  let iconClassname = hostel.isBookmark ? 'fas fa-bookmark' : 'far fa-bookmark';
+  let iconClassname = status ? 'fas fa-bookmark' : 'far fa-bookmark';
 
   return (
     <div className='hostel-item-card'>

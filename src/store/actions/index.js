@@ -6,4 +6,5 @@ export {
   setCurrentHotel,
   bookmarkHostel,
   setHotels,
+  searchHostels,
 } from './hostel';

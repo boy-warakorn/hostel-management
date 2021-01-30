@@ -3,12 +3,15 @@ import {
   SET_CURRENT_HOSTEL,
   BOOKMARK_HOSTEL,
   SET_HOSTELS,
+  SEARCH_HOSTELS,
 } from '../actions/actionTypes';
+import { searchObjectByName } from '../../utils/utilities';
 
 const initialState = {
   hostels: null,
   currentHostel: null,
   bookmarkHostels: null,
+  searchHostels: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -60,6 +63,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         hostels: updatedHostel,
+      };
+    }
+    case SEARCH_HOSTELS: {
+      const searchName = action.name;
+      if (searchName === '') {
+        return {
+          ...state,
+          searchHostels: null,
+        };
+      }
+      const updatedHostels = searchObjectByName(state.hostels, searchName);
+
+      return {
+        ...state,
+        searchHostels: updatedHostels,
       };
     }
     default: {
