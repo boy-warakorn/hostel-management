@@ -1,29 +1,60 @@
 import {
-  FETCH_BOOKMARK_HOSTELS,
-  FETCH_HOSTELS,
-  FETCH_HOSTEL_BY_ID,
+  SET_BOOKMARK_HOSTELS,
+  SET_CURRENT_HOSTEL,
   BOOKMARK_HOSTEL,
+  SET_HOSTELS,
 } from '../actions/actionTypes';
 
 const initialState = {
   hostels: null,
-  current_hostel: null,
-  bookmark_hostels: null,
+  currentHostel: null,
+  bookmarkHostels: null,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_HOSTELS: {
-      return;
+    case SET_HOSTELS: {
+      return {
+        ...state,
+        hostels: action.payload,
+      };
     }
-    case FETCH_BOOKMARK_HOSTELS: {
-      return;
+    case SET_CURRENT_HOSTEL: {
+      const id = action.id;
+
+      const targetHostel = state.hostels.filter((hostel) => id === hostel.id);
+
+      return {
+        ...state,
+        currentHostel: targetHostel,
+      };
     }
-    case FETCH_HOSTEL_BY_ID: {
-      return;
+    case SET_BOOKMARK_HOSTELS: {
+      const bookmarkHostels = state.hostels.filter(
+        (hostel) => hostel.isBookmark
+      );
+
+      return {
+        ...state,
+        bookmarkHostels,
+      };
     }
     case BOOKMARK_HOSTEL: {
-      return;
+      const targetHostelId = action.id;
+
+      const updatedHostel = state.hostels.map((hostel) =>
+        hostel.id === targetHostelId
+          ? {
+              ...hostel,
+              isBookmark: !hostel.isBookmark,
+            }
+          : hostel
+      );
+
+      return {
+        ...state,
+        hostels: updatedHostel,
+      };
     }
     default: {
       return state;

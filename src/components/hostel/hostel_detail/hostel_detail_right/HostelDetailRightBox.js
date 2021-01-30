@@ -1,13 +1,17 @@
 import React from 'react';
 import './HostelDetailRightBox.css';
 
-const HostelDetailRightBox = () => {
+const HostelDetailRightBox = ({ hostel }) => {
   return (
     <div className='hostel-detail-right-box'>
       <div className='hostel-detail-right-card'>
         <h4 className='hostel-header-text'>Image(s)</h4>
-        <div className='hostel-img-card'></div>
-        <div className='hostel-img-card'></div>
+        {hostel.images.map((imgURL) => (
+          <div
+            className='hostel-img-card'
+            style={{ backgroundImage: `url(${imgURL})` }}
+          ></div>
+        ))}
       </div>
     </div>
   );

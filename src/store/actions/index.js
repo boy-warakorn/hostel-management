@@ -1,8 +1,9 @@
 export { login, register } from './auth';
 
 export {
-  fetchBookmarkHostels,
+  setBookmarkHostels,
   fetchHostels,
-  fetchHostelByID,
+  setCurrentHotel,
   bookmarkHostel,
+  setHotels,
 } from './hostel';

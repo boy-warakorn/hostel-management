@@ -3,33 +3,32 @@ import './HostelDetailLeftBox.css';
 import { GOOGLE_API_KEY } from '../../../../configs/api';
 import GoogleMapReact from 'google-map-react';
 
-const Marker = ({ text }) => <div>{text}</div>;
+const Marker = ({ text }) => <div className='marker'>{text}</div>;
 
-const HostelDetailLeftBox = () => {
-  const initialPos = { lat: 59.95, lng: 30.33 };
+const HostelDetailLeftBox = ({ hostel }) => {
+  const initialPos = { lat: hostel.map.lat, lng: hostel.map.lng };
+
+  let iconClassname = hostel.isBookmark ? 'fas fa-bookmark' : 'far fa-bookmark';
 
   return (
     <div className='hostel-detail-left-box'>
       <div className='hostel-detail-content'>
         <div className='hostel-detail-title-box'>
           <div className='hostel-detail-title-left'>
-            <h4 className='hostel-header-text'>Hostel bangalore</h4>
+            <h4 className='hostel-header-text'>{hostel.name}</h4>
             <p>
-              <span className='bold-text'>Price: </span>47853 Baht/day
+              <span className='bold-text'>Price: </span>
+              {hostel.price} Baht/day
             </p>
           </div>
           <div className='hostel-detail-title-right'>
-            <i className='fas fa-bookmark'></i>
-            {/* <i className='far fa-bookmark'></i> */}
+            <i className={iconClassname}></i>
           </div>
         </div>
         <div className='hostel-detail-info-box'>
           <p>
-            <span className='bold-text'>Detail: </span>Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Quisquam rerum cum ut iure
-            accusantium soluta magnam eius nam laboriosam dolorum animi
-            assumenda incidunt obcaecati, excepturi voluptatem? Minus
-            exercitationem nam nobis.
+            <span className='bold-text'>Detail: </span>
+            {hostel.detail}
           </p>
           <div className='hostel-map-title'>
             <h4 className='hostel-header-text'>Map</h4>
@@ -40,7 +39,7 @@ const HostelDetailLeftBox = () => {
               center={initialPos}
               zoom={11}
             >
-              <Marker lat={59.955413} lng={30.337844} text='My Marker' />
+              <Marker lat={hostel.map.lat} lng={hostel.map.lng} text='Here' />
             </GoogleMapReact>
           </div>
         </div>

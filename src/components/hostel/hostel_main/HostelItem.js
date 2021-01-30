@@ -1,42 +1,48 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import * as actions from '../../../store/actions/index';
 import './HostelItem.css';
 import SecondaryButton from '../../common/SecondaryButton';
 import { useHistory, useLocation } from 'react-router-dom';
 
-const HostelItem = () => {
+const HostelItem = ({ hostel }) => {
   const history = useHistory();
   const location = useLocation();
+  const dispatch = useDispatch();
 
-  const OnClickHandler = () => {
+  const onClickHandler = () => {
     history.push({
-      pathname: `/home/hostel/1`,
+      pathname: `/home/hostel/${hostel.id}`,
       state: {
         from: location.pathname,
       },
     });
   };
 
+  const bookmark = () => {
+    dispatch(actions.bookmarkHostel(hostel.id));
+    dispatch(actions.setBookmarkHostels());
+  };
+
+  let iconClassname = hostel.isBookmark ? 'fas fa-bookmark' : 'far fa-bookmark';
+
   return (
     <div className='hostel-item-card'>
-      <div className='hostel-item-title-box'>
+      <div className='hostel-item-title-box' onClick={bookmark}>
         <p>
-          <span>Name:</span> Hotel Del luna
+          <span>Name:</span> {hostel.name}
         </p>
-        <i className='fas fa-bookmark'></i>
-        {/* <i className='far fa-bookmark'></i> */}
+        <i className={iconClassname}></i>
       </div>
       <div className='hostel-item-detail-box'>
         <p>
-          <span>Price:</span> 48000 Baht/Day
+          <span>Price:</span> {hostel.price} Baht/Day
         </p>
         <p>
-          <span>Detail:</span> Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Unde veritatis non omnis sed similique ab?
-          Asperiores obcaecati dignissimos, exercitationem veniam temporibus
-          explicabo quasi est fugiat deserunt et aperiam ut delectus.
+          <span>Detail:</span> {hostel.detail}
         </p>
         <div className='flex-end' style={{ marginBottom: '1rem' }}>
-          <SecondaryButton title='See more...' onClick={OnClickHandler} />
+          <SecondaryButton title='See more...' onClick={onClickHandler} />
         </div>
       </div>
     </div>

@@ -6,25 +6,25 @@ import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
 
-const HostelMain = () => {
+const BookingHostel = () => {
   const dispatch = useDispatch();
 
-  let hostels = useSelector((state) => {
-    return state.hostel.hostels;
+  let bookmarkHostels = useSelector((state) => {
+    return state.hostel.bookmarkHostels;
   });
+
+  useEffect(() => {
+    dispatch(actions.setBookmarkHostels());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let renderContent = <Loader />;
 
-  if (hostels != null) {
-    renderContent = hostels.map((hostel) => (
+  if (bookmarkHostels != null) {
+    renderContent = bookmarkHostels.map((hostel) => (
       <HostelItem key={hostel.id} hostel={hostel} />
     ));
   }
-
-  useEffect(() => {
-    dispatch(actions.fetchHostels());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className='hostel-container'>
@@ -39,4 +39,4 @@ const HostelMain = () => {
   );
 };
 
-export default HostelMain;
+export default BookingHostel;

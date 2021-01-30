@@ -50,6 +50,18 @@
   height: 40rem;
 }
 
+.marker {
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--color-secondary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  color: #fff;
+}
+
 @media only screen and (max-width: 1200px) {
   .hostel-detail-left-box {
     grid-column: 1/-1;

@@ -1,24 +1,40 @@
 import {
-  FETCH_BOOKMARK_HOSTELS,
-  FETCH_HOSTELS,
-  FETCH_HOSTEL_BY_ID,
+  SET_CURRENT_HOSTEL,
+  SET_BOOKMARK_HOSTELS,
+  SET_HOSTELS,
   BOOKMARK_HOSTEL,
 } from './actionTypes';
+import axios from 'axios';
+
+const baseURL = 'https://4c9c4241-644c-4184-b1f4-da319a15d70b.mock.pstmn.io';
 
 export const fetchHostels = () => {
-  return {
-    type: FETCH_HOSTELS,
+  return (dispatch) => {
+    axios
+      .get(`${baseURL}/hotel`)
+      .then((res) => {
+        dispatch(setHotels(res.data[0].hotels));
+      })
+      .catch((err) => console.log(err));
   };
 };
-export const fetchHostelByID = (id) => {
+
+export const setHotels = (hostels) => {
   return {
-    type: FETCH_HOSTEL_BY_ID,
+    type: SET_HOSTELS,
+    payload: hostels,
+  };
+};
+
+export const setCurrentHotel = (id) => {
+  return {
+    type: SET_CURRENT_HOSTEL,
     id,
   };
 };
-export const fetchBookmarkHostels = () => {
+export const setBookmarkHostels = () => {
   return {
-    type: FETCH_BOOKMARK_HOSTELS,
+    type: SET_BOOKMARK_HOSTELS,
   };
 };
 export const bookmarkHostel = (id) => {
