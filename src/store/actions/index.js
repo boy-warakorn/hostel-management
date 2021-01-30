@@ -1,4 +1,4 @@
-export { login, register } from './auth';
+export { login, register, logout } from './auth';
 
 export {
   setBookmarkHostels,
