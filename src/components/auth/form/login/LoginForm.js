@@ -44,6 +44,7 @@ const LoginForm = ({ onClick }) => {
         <InputField
           title='Password'
           name='password'
+          hidden
           onChange={formik.handleChange}
           value={formik.values.password}
         />

@@ -56,6 +56,7 @@ const Register = ({ onClick }) => {
       <InputField
         title='password'
         name='password'
+        hidden
         onChange={formik.handleChange}
         value={formik.values.password}
       />
@@ -63,6 +64,7 @@ const Register = ({ onClick }) => {
       <InputField
         title='confirm password'
         name='confirmPassword'
+        hidden
         onChange={formik.handleChange}
         value={formik.values.confirmPassword}
       />
@@ -70,7 +72,7 @@ const Register = ({ onClick }) => {
         <p>{formik.errors.confirmPassword}</p>
       ) : null}
       <InputField
-        title='birthdate'
+        title='birthdate (DD/MM/YY)'
         name='birthDate'
         onChange={formik.handleChange}
         value={formik.values.birthDate}
