@@ -11,8 +11,6 @@ import HideSidebar from '../navigation/hide_sidebar/HideSidebar';
 const Hostel = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
-
   return (
     <Fragment>
       <Navbar onBtnClick={() => setIsOpen(true)} />
