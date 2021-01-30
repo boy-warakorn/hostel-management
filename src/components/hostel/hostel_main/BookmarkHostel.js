@@ -6,7 +6,7 @@ import Loader from '../../common/Loader';
 import * as actions from '../../../store/actions/index';
 import './HostelMain.css';
 
-const BookingHostel = () => {
+const BookmarkHostel = () => {
   const dispatch = useDispatch();
   const ref = useRef();
 
@@ -42,7 +42,7 @@ const BookingHostel = () => {
   return (
     <div className='hostel-container'>
       <div className='hostel-header'>
-        <h3>Booking Hostels</h3>
+        <h3>Bookmark Hostels</h3>
       </div>
       <div className='hostel-list-box'>
         <HostelTitle onChange={search} refInput={ref} />
@@ -52,4 +52,4 @@ const BookingHostel = () => {
   );
 };
 
-export default BookingHostel;
+export default BookmarkHostel;
