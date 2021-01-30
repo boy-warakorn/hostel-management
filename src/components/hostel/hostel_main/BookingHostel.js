@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { searchObjectByName } from '../../utils/utilities';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
@@ -10,10 +9,13 @@ import './HostelMain.css';
 const BookingHostel = () => {
   const dispatch = useDispatch();
   const ref = useRef();
-  const [searchHostels, setSearchHostels] = useState(null);
 
   let bookmarkHostels = useSelector((state) => {
     return state.hostel.bookmarkHostels;
+  });
+
+  let searchHostels = useSelector((state) => {
+    return state.hostel.searchHostels;
   });
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const BookingHostel = () => {
   }
 
   const search = () => {
-    setSearchHostels(searchObjectByName(bookmarkHostels, ref.current.value));
+    dispatch(actions.searchHostels(ref.current.value, true));
   };
 
   return (

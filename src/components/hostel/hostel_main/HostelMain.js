@@ -30,7 +30,7 @@ const HostelMain = () => {
     ));
   }
   const search = () => {
-    dispatch(actions.searchHostels(ref.current.value));
+    dispatch(actions.searchHostels(ref.current.value, false));
   };
 
   useEffect(() => {

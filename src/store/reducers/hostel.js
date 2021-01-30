@@ -66,14 +66,19 @@ const reducer = (state = initialState, action) => {
       };
     }
     case SEARCH_HOSTELS: {
-      const searchName = action.name;
+      const searchName = action.payload.name;
+      const isBookmark = action.payload.isBookmark;
+
       if (searchName === '') {
         return {
           ...state,
           searchHostels: null,
         };
       }
-      const updatedHostels = searchObjectByName(state.hostels, searchName);
+
+      const updatedHostels = isBookmark
+        ? searchObjectByName(state.bookmarkHostels, searchName)
+        : searchObjectByName(state.hostels, searchName);
 
       return {
         ...state,

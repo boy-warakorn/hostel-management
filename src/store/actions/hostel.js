@@ -45,9 +45,12 @@ export const bookmarkHostel = (id) => {
   };
 };
 
-export const searchHostels = (name) => {
+export const searchHostels = (name, isBookmark) => {
   return {
     type: SEARCH_HOSTELS,
-    name,
+    payload: {
+      name,
+      isBookmark,
+    },
   };
 };
