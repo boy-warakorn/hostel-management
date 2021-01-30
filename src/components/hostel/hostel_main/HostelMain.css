@@ -24,3 +24,8 @@
   font-size: 2.25rem;
   font-weight: 500;
 }
+@media only screen and (max-width: 900px) {
+  .hostel-container {
+    grid-column: 1/-1;
+  }
+}

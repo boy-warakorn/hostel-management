@@ -10,6 +10,7 @@
   box-shadow: var(--box-shadow);
   padding: 4rem 4rem;
 }
+
 .hostel-detail-right-card > h4 {
   margin-bottom: 2rem;
 }
@@ -24,4 +25,23 @@
 
 .hostel-img-card:not(:last-child) {
   margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  .hostel-detail-right-box {
+    grid-column: 1/-1;
+    padding: 5rem;
+  }
+  .hostel-img-card {
+    height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hostel-detail-right-box {
+    padding: 0rem;
+  }
+  .hostel-detail-right-card {
+    border-radius: 0;
+    box-shadow: 0px 0px 0px #fff;
+  }
 }

@@ -9,7 +9,7 @@ const HostelItem = () => {
 
   const OnClickHandler = () => {
     history.push({
-      pathname: `${location.pathname}/hostel/1`,
+      pathname: `/home/hostel/1`,
       state: {
         from: location.pathname,
       },

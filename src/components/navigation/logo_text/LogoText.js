@@ -1,5 +1,5 @@
 import React from 'react';
-import './SidebarLogoText.css';
+import './LogoText.css';
 
 const SidebarLogoText = () => {
   return (

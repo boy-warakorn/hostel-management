@@ -1,0 +1,21 @@
+.navbar {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar {
+    justify-self: flex-start;
+    align-self: flex-start;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    width: 100%;
+    display: flex;
+    background-color: var(--color-secondary-dark);
+    padding: 1rem 2rem;
+
+    justify-content: space-between;
+  }
+  .navbar-right {
+    display: flex;
+  }
+}

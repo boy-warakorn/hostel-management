@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import Sidebar from '../navigation/Sidebar';
+import Sidebar from '../navigation/sidebar/Sidebar';
+import Navbar from '../navigation/navbar/Navbar';
 import HostelMain from './hostel_main/HostelMain';
 import HostelDetail from './hostel_detail/HostelDetail';
 import { Switch, Route } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 const Hostel = () => {
   return (
     <Fragment>
+      <Navbar />
       <Sidebar />
       <Switch>
         <Route path='/home' exact render={() => <HostelMain />} />

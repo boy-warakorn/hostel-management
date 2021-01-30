@@ -1,0 +1,16 @@
+.sidebar-head {
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .sidebar-head {
+    margin-bottom: 0rem;
+  }
+  .sidebar-head > i {
+    margin-right: 1rem;
+  }
+}

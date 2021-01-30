@@ -49,3 +49,26 @@
   width: 100%;
   height: 40rem;
 }
+
+@media only screen and (max-width: 1200px) {
+  .hostel-detail-left-box {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hostel-detail-left-box {
+    padding: 0rem;
+  }
+  .hostel-detail-content {
+    border-radius: 0;
+    box-shadow: 0px 0px 0px #fff;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .hostel-map-box {
+    margin-top: 3rem;
+    width: 100%;
+    height: 20rem;
+  }
+}
