@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
+
 import HostelDetailRightBox from './hostel_detail_right/HostelDetailRightBox';
 import HostelDetailLeftBox from './hostel_detail_left/HostelDetailLeftBox';
 import Loader from '../../common/Loader';
@@ -19,7 +20,7 @@ const HostelDetail = () => {
   useEffect(() => {
     dispatch(actions.setCurrentHotel(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, []);
 
   const onClickHandler = () => {
     history.push(`${location.state.from}`);
@@ -30,7 +31,13 @@ const HostelDetail = () => {
   if (curHostel !== null) {
     renderContent = (
       <Fragment>
-        <HostelDetailLeftBox hostel={curHostel[0]} />
+        <HostelDetailLeftBox
+          hostel={curHostel[0]}
+          onClick={() => {
+            dispatch(actions.bookmarkHostel(curHostel[0].id));
+            dispatch(actions.setCurrentHotel(id));
+          }}
+        />
         <HostelDetailRightBox hostel={curHostel[0]} />
       </Fragment>
     );

@@ -20,6 +20,7 @@ const HostelItem = ({ hostel }) => {
   };
 
   const bookmark = () => {
+    hostel.isBookmark = !hostel.isBookmark;
     dispatch(actions.bookmarkHostel(hostel.id));
     dispatch(actions.setBookmarkHostels());
   };

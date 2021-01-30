@@ -5,7 +5,7 @@ import './HostelDetailLeftBox.css';
 
 const Marker = ({ text }) => <div className='marker'>{text}</div>;
 
-const HostelDetailLeftBox = ({ hostel }) => {
+const HostelDetailLeftBox = ({ hostel, onClick }) => {
   const initialPos = { lat: hostel.map.lat, lng: hostel.map.lng };
 
   let iconClassname = hostel.isBookmark ? 'fas fa-bookmark' : 'far fa-bookmark';
@@ -21,7 +21,7 @@ const HostelDetailLeftBox = ({ hostel }) => {
               {hostel.price} Baht/day
             </p>
           </div>
-          <div className='hostel-detail-title-right'>
+          <div className='hostel-detail-title-right' onClick={onClick}>
             <i className={iconClassname}></i>
           </div>
         </div>

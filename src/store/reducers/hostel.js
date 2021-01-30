@@ -20,6 +20,9 @@ const reducer = (state = initialState, action) => {
       };
     }
     case SET_CURRENT_HOSTEL: {
+      if (state.hostels === null) {
+        return state;
+      }
       const id = action.id;
 
       const targetHostel = state.hostels.filter((hostel) => id === hostel.id);
