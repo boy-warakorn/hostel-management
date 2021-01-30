@@ -12,6 +12,7 @@ const Navbar = () => {
       <div className='navbar-right'>
         <CustomLink to='/home' title='Home' icon='' />
         <CustomLink to='/home/bookmark' title='Bookmark' icon='' />
+        <div className='navbar-user-img' />
       </div>
     </div>
   );

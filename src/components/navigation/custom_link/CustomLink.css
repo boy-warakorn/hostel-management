@@ -33,6 +33,9 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .sidebar-link-text {
+    padding: 0.5rem;
+  }
   .sidebar-link-text:not(:last-child) {
     margin-bottom: 0rem;
     margin-right: 1rem;

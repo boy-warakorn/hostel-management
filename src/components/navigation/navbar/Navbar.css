@@ -17,5 +17,18 @@
   }
   .navbar-right {
     display: flex;
+    align-items: center;
+  }
+
+  .navbar-user-img {
+    border-radius: 50%;
+    background-color: red;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-image: url('https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528');
+    background-size: cover;
+    background-position: center;
+    margin-right: 1.2rem;
+    border: 1px solid black;
   }
 }

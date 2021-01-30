@@ -29,6 +29,10 @@
   justify-content: space-around;
 }
 
+.auth-form {
+  width: 100%;
+}
+
 @media only screen and (max-width: 1500px) {
   .auth-button-group {
     flex-direction: column;
