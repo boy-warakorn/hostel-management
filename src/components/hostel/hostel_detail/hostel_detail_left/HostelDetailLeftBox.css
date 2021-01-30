@@ -1,0 +1,51 @@
+.hostel-detail-left-box {
+  grid-column: 1/2;
+
+  padding: 5rem;
+}
+
+.hostel-detail-content {
+  background-color: #fff;
+
+  border-radius: var(--border-radius-xs);
+  box-shadow: var(--box-shadow);
+  padding: 4rem 4rem;
+}
+
+.hostel-detail-title-box {
+  border-bottom: var(--line);
+  padding-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hostel-detail-title-left > p {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+.hostel-detail-title-right > i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.hostel-detail-info-box {
+  margin-top: 2rem;
+}
+.hostel-detail-info-box > p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.hostel-map-title {
+  margin-top: 4rem;
+  border-bottom: var(--line);
+  padding-bottom: 1rem;
+}
+
+.hostel-map-box {
+  margin-top: 3rem;
+  width: 100%;
+  height: 40rem;
+}

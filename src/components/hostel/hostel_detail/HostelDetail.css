@@ -1,0 +1,41 @@
+.hostel-detail-container {
+  background-color: #fff;
+  grid-column: 2/-1;
+  width: 100%;
+}
+
+.hostel-detail-header {
+  height: 8rem;
+  border-bottom: var(--line);
+  padding-left: 4rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.hostel-detail-header > h3 {
+  margin-left: 1rem;
+  font-size: 2.25rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.hostel-detail-header i {
+  font-size: 2.25rem;
+  cursor: pointer;
+}
+
+.hostel-detail-box {
+  min-height: calc(100vh - 8rem);
+  background-color: #eeeeee;
+
+  display: grid;
+  grid-template-columns: 1fr 35rem;
+  grid-template-rows: max-content;
+}
+
+.hostel-header-text {
+  font-size: 2.25rem;
+  font-weight: 500;
+}

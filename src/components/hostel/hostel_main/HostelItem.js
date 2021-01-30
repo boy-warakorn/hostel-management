@@ -1,6 +1,6 @@
 import React from 'react';
 import './HostelItem.css';
-import SecondaryButton from '../common/SecondaryButton';
+import SecondaryButton from '../../common/SecondaryButton';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const HostelItem = () => {
@@ -8,7 +8,12 @@ const HostelItem = () => {
   const location = useLocation();
 
   const OnClickHandler = () => {
-    history.push(`${location.pathname}/hostel/1`);
+    history.push({
+      pathname: `${location.pathname}/hostel/1`,
+      state: {
+        from: location.pathname,
+      },
+    });
   };
 
   return (

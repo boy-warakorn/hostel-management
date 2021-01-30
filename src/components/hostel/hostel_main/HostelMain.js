@@ -3,11 +3,13 @@ import './HostelMain.css';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 
-const HostelMain = () => {
+const HostelMain = ({ isBookmark }) => {
+  let title = isBookmark ? 'Bookmark Hostel' : 'Home';
+
   return (
     <div className='hostel-container'>
       <div className='hostel-header'>
-        <h3>Home</h3>
+        <h3>{title}</h3>
       </div>
       <div className='hostel-list-box'>
         <HostelTitle />
@@ -15,7 +17,7 @@ const HostelMain = () => {
           <HostelItem />
           <HostelItem />
           <HostelItem />
-          <HostelItem />
+          {!isBookmark && <HostelItem />}
         </div>
       </div>
     </div>

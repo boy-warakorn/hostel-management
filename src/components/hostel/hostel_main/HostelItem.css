@@ -38,6 +38,10 @@
   line-height: 1.8;
 }
 
+.hostel-item-detail-box p:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
 p > span {
   font-weight: 500;
 }
