@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import './HostelMain.css';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
+import { searchObjectByName } from '../../../utils/utilities';
 
 const BookingHostel = () => {
   const dispatch = useDispatch();
+  const ref = useRef();
+  const [searchHostels, setSearchHostels] = useState(null);
 
   let bookmarkHostels = useSelector((state) => {
     return state.hostel.bookmarkHostels;
@@ -20,11 +23,19 @@ const BookingHostel = () => {
 
   let renderContent = <Loader />;
 
-  if (bookmarkHostels != null) {
+  if (searchHostels != null) {
+    renderContent = searchHostels.map((hostel) => (
+      <HostelItem key={hostel.id} hostel={hostel} />
+    ));
+  } else if (bookmarkHostels != null) {
     renderContent = bookmarkHostels.map((hostel) => (
       <HostelItem key={hostel.id} hostel={hostel} />
     ));
   }
+
+  const search = () => {
+    setSearchHostels(searchObjectByName(bookmarkHostels, ref.current.value));
+  };
 
   return (
     <div className='hostel-container'>
@@ -32,7 +43,7 @@ const BookingHostel = () => {
         <h3>Home</h3>
       </div>
       <div className='hostel-list-box'>
-        <HostelTitle />
+        <HostelTitle onChange={search} refInput={ref} />
         <div className='hostel-list-box--inside'>{renderContent}</div>
       </div>
     </div>
