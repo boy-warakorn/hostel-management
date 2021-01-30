@@ -1,10 +1,10 @@
 import React from 'react';
-import InputField from '../InputField';
-import { useDispatch } from 'react-redux';
-import * as actions from '../../../../store/actions/index';
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import InputField from '../InputField';
 import PrimaryButton from '../../../common/PrimaryButton';
 import SecondaryButton from '../../../common/SecondaryButton';
+import * as actions from '../../../../store/actions/index';
 import * as Yup from 'yup';
 
 const Register = ({ onClick }) => {

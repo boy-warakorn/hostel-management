@@ -1,0 +1,33 @@
+.ham-btn {
+  border-radius: 0;
+  border: none;
+  display: none;
+
+  background-color: var(--color-secondary-light);
+  height: 2px;
+  width: 3rem;
+}
+
+.sim-btn {
+  cursor: pointer;
+}
+
+.ham-btn::before,
+.ham-btn::after {
+  content: '';
+  display: block;
+  background-color: var(--color-secondary-light);
+  height: 2px;
+  width: 3rem;
+}
+
+.ham-btn::before {
+  transform: translateY(-1rem);
+}
+.ham-btn::after {
+  transform: translateY(0.8rem);
+}
+
+.ham-btn:focus {
+  outline: none;
+}

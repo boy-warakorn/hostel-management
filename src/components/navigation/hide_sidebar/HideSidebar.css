@@ -1,0 +1,39 @@
+@media only screen and (max-width: 600px) {
+  .sidebar-container-hide {
+    grid-column: 1/2;
+    background-image: var(--background-primary-gradient);
+    padding: 1.7rem 2rem;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    animation: moveFromLeft 0.2s;
+    z-index: 100;
+    min-height: 100vh;
+  }
+
+  .sidebar-container-hide .sidebar-head {
+    justify-content: flex-start;
+  }
+  .sidebar-container-hide .sidebar-user {
+    margin-top: 1.5rem;
+  }
+
+  .sidebar-container-hide .sidebar-link-text:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .sidebar-container-hide .sidebar-icon {
+    display: inline-block;
+  }
+}
+
+@keyframes moveFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import InputField from '../InputField';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
+import InputField from '../InputField';
 import PrimaryButton from '../../../common/PrimaryButton';
 import SecondaryButton from '../../../common/SecondaryButton';
 import * as actions from '../../../../store/actions/index';

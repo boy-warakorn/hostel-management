@@ -1,16 +1,19 @@
 import React from 'react';
-import LogoText from '../logo_text/LogoText';
 import { useDispatch } from 'react-redux';
-import * as actions from '../../../store/actions/index';
+import LogoText from '../logo_text/LogoText';
 import CustomLink from '../custom_link/CustomLink';
+import HamburgerBtn from './HamburgerButton';
+import * as actions from '../../../store/actions/index';
+
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onBtnClick }) => {
   const dispatch = useDispatch();
 
   return (
     <div className='navbar'>
       <div className='navbar-left'>
+        <HamburgerBtn onClick={onBtnClick} />
         <LogoText />
       </div>
       <div className='navbar-right'>

@@ -1,16 +1,13 @@
-import Auth from './components/auth/AuthCard';
-import Hostel from './components/hostel/Hostel';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import { Fragment } from 'react';
+import Auth from './components/auth/AuthCard';
+import Hostel from './components/hostel/Hostel';
 
 function App() {
   const isLogin = useSelector((state) => {
     return state.auth.isLogin;
   });
-
-  
 
   let route = (
     <Fragment>

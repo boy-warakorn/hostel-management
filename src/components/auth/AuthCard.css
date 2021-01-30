@@ -33,6 +33,7 @@
   width: 100%;
 }
 
+
 @media only screen and (max-width: 1600px) {
   .auth-button-group {
     flex-direction: column;

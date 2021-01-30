@@ -10,7 +10,7 @@ const AuthCard = () => {
     setIsLogin(!isUILogin);
   };
 
-  let form = isUILogin ? (
+  let renderContent = isUILogin ? (
     <LoginForm onClick={onSwitch} />
   ) : (
     <RegisterForm onClick={onSwitch} />
@@ -18,7 +18,7 @@ const AuthCard = () => {
 
   return (
     <div className='auth-container'>
-      <div className='auth-card'>{form}</div>
+      <div className='auth-card'>{renderContent}</div>
     </div>
   );
 };

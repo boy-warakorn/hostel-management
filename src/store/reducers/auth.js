@@ -1,7 +1,7 @@
 import { LOGIN, REGISTER, LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
-  isLogin: false,
+  isLogin: true,
 };
 
 const reducer = (state = initialState, action) => {

@@ -14,8 +14,10 @@
 .secondary-button:hover {
   background-color: var(--color-primary);
   color: #fff;
+  transform: translateY(-3px);
 }
 
 .secondary-button:active {
   outline: none;
+  transform: translateY(0px);
 }

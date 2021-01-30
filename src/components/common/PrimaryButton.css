@@ -14,9 +14,12 @@
 .primary-button:hover {
   background-color: var(--color-primary-light);
   color: #fff;
+
+  transform: translateY(-3px);
 }
 
 .primary-button:active,
 .primary-button:focus {
   outline: none;
+  transform: translateY(0px);
 }

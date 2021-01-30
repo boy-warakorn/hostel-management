@@ -32,3 +32,17 @@
     border: 1px solid black;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .ham-btn {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-right {
+    display: none;
+  }
+}

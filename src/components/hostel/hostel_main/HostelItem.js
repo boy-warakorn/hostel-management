@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+import SecondaryButton from '../../common/SecondaryButton';
 import * as actions from '../../../store/actions/index';
 import './HostelItem.css';
-import SecondaryButton from '../../common/SecondaryButton';
-import { useHistory, useLocation } from 'react-router-dom';
 
 const HostelItem = ({ hostel }) => {
   const history = useHistory();

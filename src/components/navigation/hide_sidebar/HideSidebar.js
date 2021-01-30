@@ -4,13 +4,13 @@ import SidebarLogoText from '../logo_text/LogoText';
 import UserBox from '../user_box/UserBox';
 import CustomLink from '../custom_link/CustomLink';
 import * as actions from '../../../store/actions/index';
-import './Sidebar.css';
+import './HideSidebar.css';
 
-const Sidebar = () => {
+const HideSidebar = ({ isOpen }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className='sidebar-container'>
+    <div className='sidebar-container-hide'>
       <SidebarLogoText />
       <UserBox />
       <CustomLink to='/home' title='Home' icon='fas fa-home' />
@@ -25,4 +25,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default HideSidebar;

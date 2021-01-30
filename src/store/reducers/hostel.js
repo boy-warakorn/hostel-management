@@ -30,6 +30,9 @@ const reducer = (state = initialState, action) => {
       };
     }
     case SET_BOOKMARK_HOSTELS: {
+      if (state.hostels === null) {
+        return state;
+      }
       const bookmarkHostels = state.hostels.filter(
         (hostel) => hostel.isBookmark
       );

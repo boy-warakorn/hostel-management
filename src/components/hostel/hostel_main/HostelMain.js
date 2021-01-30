@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../../store/actions/index';
-import './HostelMain.css';
+import { searchObjectByName } from '../../utils/utilities';
 import HostelTitle from './HostelTitle';
 import HostelItem from './HostelItem';
 import Loader from '../../common/Loader';
-import { searchObjectByName } from '../../utils/utilities';
+import * as actions from '../../../store/actions/index';
+import './HostelMain.css';
 
 const HostelMain = () => {
   const dispatch = useDispatch();
   const ref = useRef();
+
   const [searchHostels, setSearchHostels] = useState(null);
 
   let hostels = useSelector((state) => {

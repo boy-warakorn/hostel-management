@@ -1,7 +1,7 @@
 import React from 'react';
-import './HostelDetailLeftBox.css';
 import { GOOGLE_API_KEY } from '../../../../configs/api';
 import GoogleMapReact from 'google-map-react';
+import './HostelDetailLeftBox.css';
 
 const Marker = ({ text }) => <div className='marker'>{text}</div>;
 

@@ -1,11 +1,11 @@
 import React, { useEffect, Fragment } from 'react';
-import './HostelDetail.css';
-import HostelDetailRightBox from './hostel_detail_right/HostelDetailRightBox';
-import HostelDetailLeftBox from './hostel_detail_left/HostelDetailLeftBox';
-import * as actions from '../../../store/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
+import HostelDetailRightBox from './hostel_detail_right/HostelDetailRightBox';
+import HostelDetailLeftBox from './hostel_detail_left/HostelDetailLeftBox';
 import Loader from '../../common/Loader';
+import * as actions from '../../../store/actions/index';
+import './HostelDetail.css';
 
 const HostelDetail = () => {
   const history = useHistory();
